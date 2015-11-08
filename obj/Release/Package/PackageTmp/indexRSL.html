@@ -1,0 +1,388 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if IE 10 ]>    <html class="ie10"> <![endif]-->
+<!--[if (gt IE 10)|!(IE)]><!--> <html class=""> <!--<![endif]-->
+<head>        
+<!--
+C:\Users\PGaston\AppData\Roaming\npm\phonegap create C:\Users\PGaston\Documents\RSL\PG-JazzBird\pgInitial
+
+cd C:\Users\PGaston\Dropbox\webRSL\webRSL
+C:\Users\PGaston\AppData\Roaming\npm\phonegap run android
+-->                                
+	<title>JazzBird</title> 
+    <!-- minify ... http://javascript.crockford.com/jsmin.html -->
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144x144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/apple-touch-icon-120x120-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114x114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72x72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/apple-touch-icon-57x57-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-precomposed.png" />
+    <link rel="shortcut icon" href="images/apple-touch-icon-precomposed.png" />
+    <link rel="apple-touch-icon" href="icon.png" />     <!-- Webapp -->
+
+    <link href="css/jquery.mobile-1.3.2.min.css" rel="stylesheet" type="text/css" />
+    <!--
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+    -->
+	<link rel="stylesheet" href="css/rsl.css" />
+
+    <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <!--
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js" type="text/javascript"></script>
+    -->
+
+    <!-- PhoneGap -->
+    <!--
+    <script src="cordova-2.0.0.js" type="text/javascript"></script>
+    -->
+    <script src="phonegap.js"></script>
+    <script src="Media.js" type="text/javascript"></script>
+    <!-- PhoneGap - other
+    <script src="device.js" type="text/javascript"></script>
+    <script src="js/logger.js" type="text/javascript"></script>
+    -->
+
+    <script src="js/jquery.mobile-1.3.2.min.js" type="text/javascript"></script>
+    <!--
+    <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js" type="text/javascript"></script>
+    -->
+
+
+    <script src="js/modernizr-2.6.2.js" type="text/javascript"></script>
+    <script src="js/jquery.Storage.js" type="text/javascript"></script>
+    <script src="js/jquery.timers-1.2.js" type="text/javascript"></script>
+    <script src="js/baseRSL.js" type="text/javascript"></script>   
+    <script src="js/jqmRSL.js" type="text/javascript"></script> 
+    <!--
+    <script src="js/compressed1.js" type="text/javascript"></script>
+    -->
+
+    <script src="js/log4javascript.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var bLocal = window.location.hostname.indexOf("localhost") >= 0 || window.location.hostname.indexOf("127.0.0.1") >= 0;
+        var log;
+        //        bLocal = true;
+        log = bLocal ? log4javascript.getDefaultLogger() : log4javascript.getNullLogger();
+        //        var log = log4javascript.getDefaultLogger();
+        //        var log = log4javascript.getNullLogger();   // no logging
+        log.info("Starting");
+        log.info("window.phonegap=" + window.phonegap);
+    </script>
+
+    <script type="text/javascript">
+        function pgOnDeviceReady() {
+            log.info("rslOnDeviceReady");
+            console.log('rslOnDeviceReady');
+        }
+
+        document.addEventListener('deviceready', pgOnDeviceReady, false);
+    </script>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-44612466-1', 'radioshowlinks.com');
+    ga('send', 'pageview');
+</script>
+
+<!--
+
+<style>
+.webappresponsive { width: 320px; height: 50px; }
+@media(min-width: 500px) { .webappresponsive { width: 468px; height: 
+60px; } }
+@media(min-width: 800px) { .webappresponsive { width: 728px; height: 
+90px; } }
+</style>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle webappresponsive"
+      style="display:inline-block"
+      data-ad-client="ca-pub-9541931695796816"
+      data-ad-slot="6672870290"></ins>
+<script type="text/javascript"><!--
+    google_ad_client = "ca-pub-9541931695796816";
+    google_ad_slot = "2382271494";
+    google_ad_width = 320;
+    google_ad_height = 50;
+</script>
+
+-->
+
+
+
+
+</head> 
+<body>
+
+<div data-role="page" id="pgHome" class="ui-responsive-panel">
+    <div data-role="panel" id="left-panel">
+        <ul data-role="listview">
+        	<li data-icon="delete" data-theme="b"><a href="#" data-rel="close">Welcome to JazzBird!</a></li>
+        </ul>
+        <p>
+        To the right you'll see a list of Jazz shows that are currently available.    Click one to bring up more description and a 'play' button.
+        </p>
+
+        <p>
+        These shows are curated by <a href='http://www.jazzboston.org/' target='_blank'>JazzBoston</a> - you're getting the best Jazz available.   This webiste is provided by Audibilities, LLC.
+        </p>
+
+        <p>
+        We also offer higher performance mobile apps for the iPhone and iPad, and soon Android.   See the button at the bottom of the show listings at the right.
+        </p>
+
+        <h3 style='text-align:center; font-style:italic;'>Enjoy!</h3>
+
+        <p align=center>
+                <a id='btnAboutFeedback' href="mailto:info@audibilities.com" data-role="button" data-icon="directions" data-inline="true">Provide Feedback!</a>
+        </p>
+
+        <br />
+        <div id='aboutDevice'></div>
+    </div>
+
+	<div data-role="header" data-nobackbtn="true" data-position="fixed">
+        <a href="#left-panel" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false">Menu</a>
+		<h1 id='homeTitle'>JazzBird</h1>
+		<a id='btnHomeNowPlaying' href="#pgShow" data-appEvent='homeNowPlaying' data-appEventValue='' data-icon="star" class="ui-btn-right">Playing</a>
+            <div id='txtChannelError' style="color:White; font-weight:bold; text-align: center; background-color:Red; "></div>
+	</div>
+
+    <div data-role="content" id="showListContent">
+        <ul data-role='listview'>
+            <li data-role='list-divider'>Welcome JazzBird!</li>
+            <li>
+                <img src='images/grid/jb-100-trans.png' style='padding:6px 6px 6px 6px;' />
+                <div class='jbTitle' style='padding:0px 0px 6px 0px; font-size: smaller;'>
+                Explore JazzBoston's selection of the best jazz around the globe.    Get more stations, features, and responsiveness with the app!
+                </div>
+                <span style='font-size:smaller;'>
+                    <img src='images/grid/b17-sq.png'  style='vertical-align: -12%;' />
+                    Boston, USA, show
+                </span>
+                <img src='images/grid/blank.gif' style='height:6px;' />
+                <div style="font-size:xx-small;">&nbsp;</div>
+            </li>
+        </ul>
+        <span id="shows-container">
+            <ul data-role='listview'>
+                <li>
+                    <br /><br />
+                    <h1>Reading shows - please wait</h1>
+                    <br /><br />      
+                </li>
+                <li data-role='list-divider'>Upgrade to the App!</li>
+            </ul>
+        </span
+
+        <br /><br />
+        <h3>Upgrading to the App gives you...</h3>
+        <ul>
+            <li>More shows and stations</li>
+            <li>More robust, more responsive experience</li>
+            <li>Plays in the background</li>
+            <li>Sleep timer</li>
+            <li>Other/more features...</li>
+        </ul>
+        ...and...
+        <ul>
+            <li><strong>Supports JazzBoston and Audibilities!!!</strong></li>
+        </ul>
+
+        <div id='noUpgrade' style='font-size: larger; font-weight:bold;'>
+            Get the app for your device from your App store!
+        </div>
+
+        <div align=center>
+                <a id='btnUpgrade' href="www.radioshowlinks.com" data-role="button" data-inline="true" target="_blank">Get the Real App!</a>
+        </div>
+
+	</div>
+
+    <!--
+    <footer data-role="footer" data-position="fixed">
+        <script type="text/javascript"
+                src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </footer>
+    -->
+
+    <!--
+    <p align="center" style='font-size:smaller'>
+    &copy;2013 Audibilities, LLC
+    &nbsp;&nbsp;
+    <span id='txtSKU' style='font-size:smaller'>
+    </p>
+
+    <!--
+	<div data-role="footer" class="footer-docs" style="text-align: center;">
+        &copy;2013 Audibilities, LLC
+        &nbsp;&nbsp;
+        <span id='txtSKU' style='font-size:smaller'>
+	</div>
+
+    <footer id='ftrAd' data-role="footer" data-position="fixed">
+    </footer>
+
+
+	<div data-role="footer" class="footer-docs" style="text-align: center;">
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({}); </script>
+	</div>
+    -->
+    	
+</div>
+
+
+<div data-role="page" id="pgShow">
+	<div data-role="header" data-position="fixed">
+        <a id='btnBackShow' href='#pgHome' data-icon="arrow-l" class="ui-btn-left">Back</a>
+		<h1 id='hdrShowTitle'>JazzBird</h1>
+		<a id='btnShowNowPlaying' href="#" data-appEvent='showNowPlaying' data-appEventValue='' data-icon="star" class="ui-btn-right" style="display:none;">Playing</a>
+	</div>
+
+    <div id='txtShowError' style="color:White; font-weight:bold; text-align: center; background-color:Red; "></div>
+	<div data-role="content">
+        <h2 id='txtShowTitle' align=center></h2>	           
+
+        <div class="ui-grid-a">
+	        <div class="ui-block-a">
+                <a href="#" data-theme="" id="btnPlay" data-appEvent='btnPlay' data-appEventValue=''><img class='centered' id='imgPlayButton' src="images/playbutton.png" width="64" height="64"></a>
+                <div id='spnElapsed' style='font-size: x-small; text-align: center;'></div>
+                <h4 id='txtPlaying' style='text-align: center;'>Playing...</h4>    <!-- show is live, or when playing... -->
+            </div>
+	        <div class="ui-block-b">
+                <h4 id='txtNowPlaying' style='font-size: small;'>Currently Playing</h4>
+            </div>
+        </div><!-- /grid-a -->
+
+        <h4 id='txtPlayingOn'>Playing on</h4>   <!-- playing on what station -->
+        <div id='divMultiStations' data-role="collapsible-set">
+	        <div data-role="collapsible" data-collapsed="true">
+	        <h3>Select Station</h3>
+            <span id='pSlvContainer'>
+                listview to be inserted dynamically... 
+            </span>
+	        </div>
+        </div>
+
+        <h4 id='txtDescTitle'>Description</h4>
+        <h5 id='txtShowDesc'></h5>
+
+        <a id='btnHomePage' href="" data-role="button" data-icon="home" data-inline="true" data-appEvent='homePageClick' data-appEventValue=''>Show Home Page</a>
+        &nbsp;
+        <a id='btnFacebook' href="" data-role="button" data-icon="grid" data-inline="true" >Facebook Page</a>
+        <!-- data-appEvent='facebookPageClick' data-appEventValue='' rel="external" -->
+
+        <!--
+        <br />Debug:
+        <br />
+        InUrl:
+        <div id='txtInUrl'></div>
+        <br />
+        Deref'd:
+        <div id='txtdeRefUrls'></div>
+        -->
+
+        <hr />
+
+        <h4>Please Provide Feedback...</h4>
+        <a id='btnShowNotOn' href="mailto:info@audibilities.com" data-role="button" data-icon="alert" data-inline="true">Show Not On</a>
+        &nbsp;&nbsp;
+        <a id='btnStationNotPlaying' href="mailto:info@audibilities.com" data-role="button" data-icon="alert" data-inline="true">Station Not Playing</a>
+
+        <br />
+        <p align="center" style='font-size:smaller'>
+        &copy;2013 Audibilities, LLC
+        &nbsp;&nbsp;
+        <span id='Span1' style='font-size:smaller'>
+        </p>
+
+        <audio id='audioPlayer'></audio>
+	</div>
+
+    <!--
+    -->
+
+    <!--
+	<div data-role="footer" class="footer-docs" style="text-align: center;">
+        &copy;2013 Audibilities, LLC
+	</div>	
+    -->
+
+    <!--
+    <footer data-role="footer" data-position="fixed">
+        <script type="text/javascript"
+                src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </footer>
+   -->
+
+</div>
+
+
+
+<div data-role="page" id="pgAbout">
+	<div data-role="header" data-position="fixed">
+        <a id='btnBackAbout' href='#pgHome' data-icon="arrow-l" class="ui-btn-left">Back</a>
+		<h1>About JazzBird...</h1>
+	</div>
+
+	<div data-role="content">	
+         <br /><br />
+        <h5 align=center>This app is brought to you by Audibilities, LLC.</h5>
+        <br />
+ 	</div>
+	<div data-role="footer" class="footer-docs" data-position="fixed" style="text-align: center;">
+			&copy;2013 Audibilities, LLC
+    </div>
+</div>
+
+
+<div data-role="page" id="pgUpgrade">
+	<div data-role="header" data-position="fixed">
+        <a id='btnBackUpgrade' href='#pgHome' data-icon="arrow-l" class="ui-btn-left">Back</a>
+		<h1>Upgrade to App</h1>
+	</div>
+
+	<div data-role="content">	
+        <br />
+        <h2>Why upgrade?</h2>
+        <ul>
+            <li>Play in the background</li>
+            <li>Sleep timer</li>
+            <li>More responsive</li>
+            <li>More features...</li>
+        </ul>
+        ...and...
+        <ul>
+        <li>Support JazzBoston and Audibilities!!!</li>
+        </ul>
+        <br />
+        <p align=center>
+                <a id='btnActualUpgrade' href="https://itunes.apple.com/us/app/jazzbird-from-jazzboston-best/id328568085?mt=8&uo=4" data-role="button" data-icon="directions" data-inline="true">Upgrade at the App Store!</a>
+        </p>
+        <br />
+        <br /><br />
+ 	</div>
+	<div data-role="footer" class="footer-docs" data-position="fixed" style="text-align: center;">
+			&copy;2013 Audibilities, LLC
+    </div>
+</div>
+
+</body>
+</html>

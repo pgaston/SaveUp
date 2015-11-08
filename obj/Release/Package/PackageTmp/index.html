@@ -1,0 +1,680 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Save Up</title>
+    <!--
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+    <meta name="apple-mobile-web-app-title" content="Save Up" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="apple-touch-startup-image" href="img/splash.png" />
+
+    <!--
+    <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-startup-image" href="apple-touch-startup-image-320x460.png" />
+    <link rel="apple-touch-startup-image" sizes="768x1004" href="apple-touch-startup-image-768x1004.png" />
+    -->
+
+    <!--
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    -->
+
+
+
+    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+    <!--
+    <link href="css/taketwo.min.css" rel="stylesheet" />
+    -->
+    <link rel="stylesheet" href="css/gabriel.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+
+    <link href="css/jquery.mobile.icons-1.4.5.min.css" rel="stylesheet" />
+
+    <link href="css/jqm-icon-pack-fa.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <!--
+    <link href="css/index.css" rel="stylesheet" />
+    -->
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <!--
+    <script src="js/jquery-2.1.4.min.js"></script>
+        -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+<!--    <script src="js/gmaps.js"></script>  
+    <script type="text/javascript" src="jquery.gmap.js"></script>  
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.0/src/infobox_packed.js"></script>
+    -->
+
+    <!--
+    <script src="http://maps.google.com/maps/api/js"></script>
+-->
+   
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhBEyND3Q2d7hG6qsiEa0W_PkA9PlIR8A&callback=initMap"
+            async defer></script>
+<!--    <script src="js/log4javascript.js"></script>  -->
+    <script type="text/javascript">
+        console.info("starting");
+    </script>
+    <script src="js/base.js"></script>
+
+</head>
+<body>
+
+
+    <!--    HOME    -->
+    <div data-role="page" id="pgHome" data-title="Save Up">
+        <div data-role="header" id="hdrHome">
+            <a href="#pnlHomeLeft" data-role="button" data-icon="bars" class="ui-alt-icon ui-nodisc-icon" data-iconpos="notext"></a>
+            <h1>Save Up</h1>
+        </div><!-- /header --><!--  class="myPanel" -->
+        <div data-role="panel" id="pnlHomeLeft" data-position="left" data-display="reveal" data-theme="none">
+            <br />
+            <ul data-role="listview">
+                <li><a href="#pgHome" class="ui-state-disabled"><img src="css/images/home-black.png" alt="home"  class="ui-li-icon" />Home</a></li>
+                <li><a href="#pgNudge"><img src="css/images/check-black.png" alt="home" class="ui-li-icon" />Save Up!</a></li>
+                <li><a href="#pgGoals"><img src="css/images/cloud-black.png" alt="home" class="ui-li-icon" />Goals</a></li>
+                <li><a href="#pgFriends"><img src="css/images/user-black.png" alt="home" class="ui-li-icon" />Friends</a></li>
+                <li><a href="#pgLocations"><img src="css/images/location-black.png" alt="home" class="ui-li-icon" />Locations</a></li>
+                <li><a href="#pgBanking"><img src="css/images/eye-black.png" alt="home" class="ui-li-icon" />How am I doing?</a></li>
+                <li><a href="#pgBanking"><img src="css/images/gear-black.png" alt="home" class="ui-li-icon" />Banking</a></li>
+                <br /><br /><br /><br /><br /><br />
+                <img src="images/icon57.png" class="displayed" style="border: 3px solid grey;" />
+                <h3 align="center">&copy; 2015 Save Up</h3>
+            </ul>
+        </div><!-- /panel -->
+        <div data-role="content">
+            <h3 align="middle">Your <b>Camp for Xander</b> goal!</h3>
+
+            <strong>
+                <table width="100%">
+                    <tr>
+                        <td align="right">Progress to Goal</td>
+                        <td align="center"><img src="images/homeGoal.png" /></td>
+                    </tr>
+                    <tr style="height: 60px;">
+                        <td align="right">Weekly Progress</td>
+                        <td align="center"><img src="images/homeWeek.png" /></td>
+                    </tr>
+                    <tr style="height: 60px;">
+                        <td align="right">Daily Progress</td>
+                        <td align="center"><img src="images/homeDaily.png" /></td>
+                    </tr>
+
+                </table>
+            </strong>
+            <hr />
+            <br />
+            <h3 align="middle">Scoreboard of Activity</h3>
+            <table width="100%">
+                <thead>
+                    <td align="center" valign="bottom" style="border-bottom:1pt solid white; font-weight:bold;">Rank</td>
+                    <td valign="bottom" style="border-bottom:1pt solid white; font-weight:bold;">Who</td>
+                    <td align="center" valign="bottom" style="border-bottom:1pt solid white; font-weight:bold;">Global<br />Rank</td>
+                    <td align="center" valign="bottom" style="border-bottom:1pt solid white; font-weight:bold;">Trend</td>
+                </thead>
+                <tr>
+                    <td align="center" style="font-weight:bold;">$ $</td>
+                    <td><strong>Me</strong></td>
+                    <td align="center">47%</td>
+                    <td align="center"><img src="css/images/arrow-u-black.png" /></td>
+                </tr>
+                <tr>
+                    <td align="center" style="font-weight:bold;">$ $</td>
+                    <td><strong>Karen</strong></td>
+                    <td align="center">49%</td>
+                    <td align="center"><img src="css/images/arrow-u-black.png" /><img src="css/images/arrow-u-black.png" /></td>
+                </tr>
+                <tr>
+                    <td align="center" style="font-weight:bold;">$ $ $ $</td>
+                    <td><strong>Peter</strong></td>
+                    <td align="center">91%</td>
+                    <td align="center"><img src="css/images/arrow-u-black.png" /></td>
+                </tr>
+                <tr>
+                    <td align="center" style="font-weight:bold;">$</td>
+                    <td><strong>Brian</strong></td>
+                    <td align="center">12%</td>
+                    <td align="center"><img src="css/images/arrow-d-black.png" /></td>
+                </tr>
+
+            </table>
+
+
+            <br /><br /><br />
+            <!--
+            <h4>To Do's</h4>
+            <a href="#pgFriends" data-role="button">Add Friends</a>
+            <a href="#pgLocations" data-role="button" data-rel="popup">Add your Location</a>
+            -->
+
+            <br /><br /><br />
+            <p>Demo Prompts</p>
+            <a href="#popup1" data-role="button" data-inline="true" data-rel="popup">Location</a>
+            <a href="#popup2" data-role="button" data-inline="true" data-rel="popup">Morning</a>
+            <a href="#popup3" data-role="button" data-inline="true" data-rel="popup">Friend</a>
+
+            <div data-role="popup" id="popup1" style="margin: 15px;">
+                <h3 align="Center">Prompt</h3>
+                <a style="margin: 15px;" href="#pgNudge2" data-icon="bell">Did you want to Save Up now?</a>
+                <br />&nbsp;
+            </div>
+
+            <div data-role="popup" id="popup2" style="margin: 15px;">
+                <h3 align="Center">Prompt</h3>
+                <p>Good Morning!<br />Your <strong>Camp for Xander</strong> goal<br /> today is $5.</p>
+                <!--
+                <a href="#" data-icon="bell">Good Morning!  Your camp goal today is $5.</a>
+                    -->
+            </div>
+<!--                 <a href="#" data-icon="bell">Have you thought about turning your thermostat down a degree, or two?</a>
+-->
+            <div data-role="popup" id="popup3" style="margin: 15px;">
+                <h3 align="Center">Message</h3>
+                <table>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td valign="top"><strong>Karen: </strong></td>
+                        <td valign="top">Hey Buddy, you're falling behind.   Get with it!   :)</td>
+                    </tr>
+                </table>
+                <br />
+            </div>
+
+
+        </div>
+
+
+
+       <div data-role="footer" data-position="fixed" positionTo="window">
+           <div style="text-align:right; padding-top: 4px;">
+               <img src="images/facebooklogo.png" style="width:30px; height: 30px;" />
+               &nbsp;
+               <img src="images/twitterlogo.png" style="width:30px; height: 30px;" />
+               &nbsp;
+           </div>
+        </div> 
+    </div><!-- /page -->
+
+
+    <!--    GOALS    -->
+    <div data-role="page" id="pgGoals" data-title="Save Up">
+        <div data-role="header">
+            <a href="#pnlGoalsLeft" data-role="button" data-icon="bars" class="ui-alt-icon ui-nodisc-icon" data-iconpos="notext"></a>
+            <h1>Goals</h1>
+        </div><!-- /header -->
+        <div data-role="panel" id="pnlGoalsLeft" class="myPanel" data-position="left" data-display="reveal" data-theme="none">
+            <br />
+            <ul data-role="listview" data-theme="a">
+                <li><a href="#pgHome"><img src="css/images/home-black.png" alt="home" class="ui-li-icon" />Home</a></li>
+                <li><a href="#pgNudge"><img src="css/images/check-black.png" alt="home" class="ui-li-icon" />Save Up!</a></li>
+                <li><a href="#pgGoals" class="ui-state-disabled"><img src="css/images/cloud-black.png" alt="home" class="ui-li-icon" />Goals</a></li>
+                <li><a href="#pgFriends"><img src="css/images/user-black.png" alt="home" class="ui-li-icon" />Friends</a></li>
+                <li><a href="#pgLocations"><img src="css/images/location-black.png" alt="home" class="ui-li-icon" />Locations</a></li>
+                <li><a href="#pgBanking"><img src="css/images/eye-black.png" alt="home" class="ui-li-icon" />How am I doing?</a></li>
+                <li><a href="#pgBanking"><img src="css/images/gear-black.png" alt="home" class="ui-li-icon" />Banking</a></li>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <img src="images/icon57.png" class="displayed" style="border: 3px solid grey;" />
+                <h3 align="center">&copy; 2015 Save Up</h3>
+                        </ul>
+        </div><!-- /panel -->
+
+        <div data-role="content">
+
+            <h3>Your Goal</h3>
+
+            <div data-role="fieldcontain">
+                <label for="name">Name It!</label>
+                <input type="text" name="name" id="name" value="Camp for Xander" />
+            </div>
+
+            <div data-role="fieldcontain">
+                <label for="name">Savings Needed $</label>
+                <input type="number" name="name" id="name" value="500" />
+            </div>
+
+            <div data-role="fieldcontain">
+                <label for="name">Needed When</label>
+                <input type="text" data-role="date" value="6/15/2016">        <!--  data-inline="true" -->
+            </div>
+
+            <div data-role="fieldcontain">
+                <label for="name"> Auto-Save Up $</label>
+                <input type="number" name="name" id="name" value="500" />
+            </div>
+            <div data-role="fieldcontain">
+                <label for="name">Auto-Save Up Per ...</label>
+                <input type="number" name="name" id="name" value="2" />
+            </div>
+            <label for="select-choice-0" class="select">Auto-Save Up Per ...</label>
+            <select name="select-choice-0" id="select-choice-0" data-mini="true">
+                <option value="Day">Day</option>
+                <option value="Week">Week</option>
+                <option value="Month">Month</option>
+            </select>
+
+            <br />
+            <a href="#" data-role="button">Set This New Goal</a>
+        </div><!-- /content -->
+
+    <!--
+        <div data-role="footer" data-position="fixed">
+            <a href="#pgInfo" data-role="button" class="ui-btn-right ui-alt-icon ui-nodisc-icon" data-icon="info" data-iconpos="notext"></a>
+            <h4>&copy;2015 &nbsp;Save Up&nbsp;</h4>
+        </div> /footer -->
+    </div><!-- /page -->
+
+    <!--    FRIENDS    -->
+    <div data-role="page" id="pgFriends" data-title="Save Up">
+        <div data-role="header">
+            <a href="#pnlFriendsLeft" data-role="button" data-icon="bars" class="ui-alt-icon ui-nodisc-icon" data-iconpos="notext"></a>
+            <h1>Friends</h1>
+        </div><!-- /header -->
+        <div data-role="panel" id="pnlFriendsLeft" class="myPanel" data-position="left" data-display="reveal" data-theme="a">
+            <br />
+            <ul data-role="listview" data-theme="a">
+                <li><a href="#pgHome"><img src="css/images/home-black.png" alt="home" class="ui-li-icon" />Home</a></li>
+                <li><a href="#pgNudge"><img src="css/images/check-black.png" alt="home" class="ui-li-icon" />Save Up!</a></li>
+                <li><a href="#pgGoals"><img src="css/images/cloud-black.png" alt="home" class="ui-li-icon" />Goals</a></li>
+                <li><a href="#pgFriends" class="ui-state-disabled"><img src="css/images/user-black.png" alt="home" class="ui-li-icon" />Friends</a></li>
+                <li><a href="#pgLocations"><img src="css/images/location-black.png" alt="home" class="ui-li-icon" />Locations</a></li>
+                <li><a href="#pgBanking"><img src="css/images/eye-black.png" alt="home" class="ui-li-icon" />How am I doing?</a></li>
+                <li><a href="#pgBanking"><img src="css/images/gear-black.png" alt="home" class="ui-li-icon" />Banking</a></li>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <img src="images/icon57.png" class="displayed" style="border: 3px solid grey;" />
+                <h3 align="center">&copy; 2015 Save Up</h3>            </ul>
+        </div><!-- /panel -->
+
+        <div data-role="content">
+            <h4>Friends help nudge each other for more savings!</h4>
+
+            <br />
+            <a href="#" data-role="button">Add Friends</a>
+
+            <br /><br />
+
+            <ul data-role="listview">
+                <li data-role="list-divider">Current Friends</li>
+                <li><a href="#">Karen Reidel</a></li>                
+                <li><a href="#">Brian Eatock</a></li>
+                <li><a href="#">Peter Gaston</a></li>
+            </ul>
+
+        </div><!-- /content -->
+    <!--
+        <div data-role="footer" data-position="fixed">
+            <a href="#pgInfo" data-role="button" class="ui-btn-right ui-alt-icon ui-nodisc-icon" data-icon="info" data-iconpos="notext"></a>
+            <h4>&copy;2015 &nbsp;Save Up&nbsp;</h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+    <!--    LOCATIONS    -->
+    <div data-role="page" id="pgLocations" class="map-page" data-title="Save Up">
+        <div data-role="header">
+            <a href="#pnlLocationsLeft" data-role="button" data-icon="bars" class="ui-alt-icon ui-nodisc-icon" data-iconpos="notext"></a>
+            <h1>Locations</h1>
+        <!--
+            <a href="#pgInfo" data-role="button" class="ui-btn-right ui-alt-icon ui-nodisc-icon" data-icon="info" data-iconpos="notext"></a>
+            -->
+        </div><!-- /header -->
+
+        <div data-role="content" id="map-canvas">
+        </div>
+   <!--
+        data-url="map-page"
+            <div id="map-canvas"></div>
+   
+        <div data-role="content" style="padding:0;">
+            <div id="map_canvas" style="width:300px; height:300px;"></div>
+            <p id="text">Lorem ipsum legere facilisi conclusionemque pro et, sint aperiam vel at. No postea scaevola vivendum duo, et vix erant paulo. Ex fuisset perfecto vix. No sit laudem noster scriptorem, probatus assueverit ius cu.</p>
+        </div>
+
+        <div role="main" class="ui-content" id="map-canvas">
+            
+        </div>
+    -->
+
+
+     </div><!-- /page -->
+    
+
+    <!--    FAKE PANEL FOR LOCATIONS    -->
+    <div data-role="page" id="pnlLocationsLeft" data-theme="a" data-title="Save Up">
+        <div data-role="content">
+            <br />
+            <ul data-role="listview" data-theme="a">
+                <li><a href="#pgHome"><img src="css/images/home-black.png" alt="home" class="ui-li-icon" />Home</a></li>
+                <li><a href="#pgNudge"><img src="css/images/check-black.png" alt="home" class="ui-li-icon" />Save Up!</a></li>
+                <li><a href="#pgGoals"><img src="css/images/cloud-black.png" alt="home" class="ui-li-icon" />Goals</a></li>
+                <li><a href="#pgFriends"><img src="css/images/user-black.png" alt="home" class="ui-li-icon" />Friends</a></li>
+                <li><a href="#pgLocations" class="ui-state-disabled"><img src="css/images/location-black.png" alt="home" class="ui-li-icon" />Locations</a></li>
+                <li><a href="#pgBanking"><img src="css/images/eye-black.png" alt="home" class="ui-li-icon" />How am I doing?</a></li>
+                <li><a href="#pgBanking"><img src="css/images/gear-black.png" alt="home" class="ui-li-icon" />Banking</a></li>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <img src="images/icon57.png" class="displayed" style="border: 3px solid grey;" />
+                <h3 align="center">&copy; 2015 Save Up</h3>            </ul>
+        </div>
+    </div><!-- /page -->
+
+    <!--    BANKING    -->
+    <div data-role="page" id="pgBanking" data-title="Save Up">
+        <div data-role="header">
+            <a href="#pnlBankingLeft" data-role="button" data-icon="bars" class="ui-alt-icon ui-nodisc-icon" data-iconpos="notext"></a>
+            <h1>Banking</h1>
+        </div><!-- /header -->
+        <div data-role="panel" id="pnlBankingLeft" class="myPanel" data-position="left" data-display="reveal" data-theme="none">
+            <br />
+            <ul data-role="listview" data-theme="a">
+                <li><a href="#pgHome"><img src="css/images/home-black.png" alt="home" class="ui-li-icon" />Home</a></li>
+                <li><a href="#pgNudge"><img src="css/images/check-black.png" alt="home" class="ui-li-icon" />Save Up!</a></li>
+                <li><a href="#pgGoals"><img src="css/images/cloud-black.png" alt="home" class="ui-li-icon" />Goals</a></li>
+                <li><a href="#pgFriends"><img src="css/images/user-black.png" alt="home" class="ui-li-icon" />Friends</a></li>
+                <li><a href="#pgLocations"><img src="css/images/location-black.png" alt="home" class="ui-li-icon" />Locations</a></li>
+                <li><a href="#pgBanking"><img src="css/images/eye-black.png" alt="home" class="ui-li-icon" />How am I doing?</a></li>
+                <li><a href="#pgBanking" class="ui-state-disabled"><img src="css/images/gear-black.png" alt="home" class="ui-li-icon" />Banking</a></li>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <img src="images/icon57.png" class="displayed" style="border: 3px solid grey;" />
+                <h3 align="center">&copy; 2015 Save Up</h3>            </ul>
+        </div><!-- /panel -->
+
+        <div data-role="content">
+            <strong>You're currently connected to</strong>
+            <div class="ui-grid-c">
+                <div class="ui-block-a"></div>
+                <div class="ui-block-b">
+                    <img src="css/images/rbclogo.png" height="60" />
+                </div>
+                <div class="ui-block-c">
+                    <strong>Royal Bank of Canada</strong>
+                </div>
+                <div class="ui-block-d">
+                    <a href="#" data-role="button" data-icon="delete" data-iconpos="notext"></a>
+                </div>
+            </div>
+            <br />
+
+        <strong>Set Your Limits</strong>
+
+            <div data-role="fieldcontain">
+                <label for="name">Minimum Chequing Balance $</label>
+                <input type="text" name="name" id="name" value="150" />
+            </div>
+
+            <div data-role="fieldcontain">
+                <label for="name">Maximum Daily Transfer $</label>
+                <input type="text" name="name" id="name" value="15" />
+            </div>
+
+            <div data-role="fieldcontain">
+                <label for="name">One-Time Maximum Transfer $</label>
+                <input type="text" name="name" id="name" value="400" />
+            </div>
+
+            <a href="#" data-role="button" data-icon="delete">Save Limits</a>
+                   
+        <br />
+
+            <p>You are guaranteed not to lose money from your account.</p>
+            <p>Fees caused by overdrafts on your chequing account outside of this app remain your responsibility.</p>
+
+                </div><!-- /content -->
+                <!-- 
+                <div data-role="footer" data-position="fixed">
+                    <a href="#pgInfo" data-role="button" class="ui-btn-right ui-alt-icon ui-nodisc-icon" data-icon="info" data-iconpos="notext"></a>
+                    <h4>&copy;2015 &nbsp;Save Up&nbsp;</h4>
+                </div>/footer -->
+            </div><!-- /page -->
+
+
+
+            <!--    NUDGE    -->
+            <div data-role="page" id="pgNudge">
+                <div data-role="header">
+                    <a href="#pnlNudgeLeft" data-role="button" data-icon="bars" class="ui-alt-icon ui-nodisc-icon" data-iconpos="notext"></a>
+                    <h1>Save Up</h1>
+                </div><!-- /header -->
+                <div data-role="panel" id="pnlNudgeLeft" class="myPanel" data-position="left" data-display="reveal" data-theme="none">
+                    <br />
+                    <ul data-role="listview" data-theme="a">
+                        <li><a href="#pgHome"><img src="css/images/home-black.png" alt="home" class="ui-li-icon" />Home</a></li>
+                        <li><a href="#pgNudge" class="ui-state-disabled"><img src="css/images/check-black.png" alt="home" class="ui-li-icon" />Save Up!</a></li>
+                        <li><a href="#pgGoals"><img src="css/images/cloud-black.png" alt="home" class="ui-li-icon" />Goals</a></li>
+                        <li><a href="#pgFriends"><img src="css/images/user-black.png" alt="home" class="ui-li-icon" />Friends</a></li>
+                        <li><a href="#pgLocations"><img src="css/images/location-black.png" alt="home" class="ui-li-icon" />Locations</a></li>
+                        <li><a href="#pgBanking"><img src="css/images/eye-black.png" alt="home" class="ui-li-icon" />How am I doing?</a></li>
+                        <li><a href="#pgBanking"><img src="css/images/gear-black.png" alt="home" class="ui-li-icon" />Banking</a></li>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <img src="images/icon57.png" class="displayed" style="border: 3px solid grey;" />
+                        <h3 align="center">&copy; 2015 Save Up</h3>                    </ul>
+                </div><!-- /panel -->
+
+                <div data-role="content">
+                            <h3>Save some money!</h3>
+                            <hr />
+                            <h4>Okay - I'm Saving!</h4>
+                            <a href="#popupConfirm1" data-role="button" data-icon="i01" data-rel="popup">One dollar</a>
+                            <a href="#popupConfirm1" data-role="button" data-icon="i02" data-rel="popup">Two dollars</a>
+                            <a href="#popupConfirm1" data-role="button" data-icon="i03" data-rel="popup">Three dollars</a>
+                            <a href="#popupConfirm1" data-role="button" data-icon="adjust" data-rel="popup">Other Amount...</a>
+                            <!--  data-icon="i01" -->
+                            <br /><hr />
+                            <p>
+                                This will be transferred from your chequing account to your
+                                savings account immediately, within the limits you have set.
+                            </p>
+
+                            <div data-role="popup" id="popupConfirm1">
+                                <h4>Success</h4>
+                                <br />
+                                <a href="#pgHome">Your transaction has occurred</a>
+                                <br />&nbsp;
+                            </div>
+
+                        </div>
+                        <!--
+            <div data-role="footer" data-position="fixed">
+                <a href="#pgInfo" data-role="button" class="ui-btn-right ui-alt-icon ui-nodisc-icon" data-icon="info" data-iconpos="notext"></a>
+                <h4>&copy;2015 &nbsp;Save Up&nbsp;</h4>
+            </div>/footer -->
+                    </div><!-- /page -->
+                    <!-- LOGGING IN -->
+                    <div data-role="page" id="pgLogin" data-title="Save Up" data-title="Save Up">
+                        <div data-role="header" data-theme="a">
+                            <h1 align="center">Welcome to Save Up!</h1>
+                            <a href="#pgInfo" data-role="button" class="ui-btn-right ui-alt-icon ui-nodisc-icon" data-icon="info" data-iconpos="notext"></a>
+                        </div><!-- /header -->
+
+                        <div data-role="content">
+                            <br />
+                            <h1 class="center-wrapper">Save Up</h1>
+                            <h2 class="center-wrapper">Nudging for savings!</h2>
+                            <br />
+                            <a href="#pgHome" data-role="button" data-icon="facebook" class="ui-alt-icon ui-nodisc-icon">Login using Facebook</a>
+                            <br />
+                            <br />
+                            <p class="center-wrapper">
+                                You will not need to login again
+                                <br />(unless you logout)
+                            </p>
+                        </div><!-- /content -->
+                        <!--
+                        <div data-role="footer" data-position="fixed">
+                            <h4>&copy;2015 &nbsp;Save Up&nbsp;</h4>
+                        </div><!-- /footer -->
+                    </div><!-- /page -->
+
+
+    <!--    NUDGE-2    -->
+    <div data-role="page" id="pgNudge2">
+        <div data-role="header">
+            <a href="#pnlNudge2Left" data-role="button" data-icon="bars" class="ui-alt-icon ui-nodisc-icon" data-iconpos="notext"></a>
+            <h1>Save Up</h1>
+        </div><!-- /header -->
+        <div data-role="panel" id="pnlNudge2Left" class="myPanel" data-position="left" data-display="reveal" data-theme="none">
+            <br />
+            <ul data-role="listview" data-theme="a">
+                <li><a href="#pgHome"><img src="css/images/home-black.png" alt="home" class="ui-li-icon" />Home</a></li>
+                <li><a href="#pgNudge" class="ui-state-disabled"><img src="css/images/check-black.png" alt="home" class="ui-li-icon" />Save Up!</a></li>
+                <li><a href="#pgGoals"><img src="css/images/cloud-black.png" alt="home" class="ui-li-icon" />Goals</a></li>
+                <li><a href="#pgFriends"><img src="css/images/user-black.png" alt="home" class="ui-li-icon" />Friends</a></li>
+                <li><a href="#pgLocations"><img src="css/images/location-black.png" alt="home" class="ui-li-icon" />Locations</a></li>
+                <li><a href="#pgBanking"><img src="css/images/eye-black.png" alt="home" class="ui-li-icon" />How am I doing?</a></li>
+                <li><a href="#pgBanking"><img src="css/images/gear-black.png" alt="home" class="ui-li-icon" />Banking</a></li>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <img src="images/icon57.png" class="displayed" style="border: 3px solid grey;" />
+                <h3 align="center">&copy; 2015 Save Up</h3>            </ul>
+        </div><!-- /panel -->
+
+        <div data-role="content">
+            <div style="text-align:right; vertical-align:middle; font-size:small; font-weight:bold;">
+                Rate this prompt
+                &nbsp;
+                <img src="images/thumbUp.png" style="height:30px; width:30px;" />
+                &nbsp;
+                <img src="images/thumbDown.png" style="height:30px; width:30px;" />
+                &nbsp;
+            </div>
+            <h1>Save some money!</h1>
+
+            <br />
+            <h2>Okay - I'm Saving!</h2>
+            <a href="#popupConfirm2" data-role="button" data-icon="i01" data-rel="popup">One dollar</a>
+            <a href="#popupConfirm2" data-role="button" data-icon="i02" data-rel="popup">Two dollars</a>
+            <a href="#popupConfirm2" data-role="button" data-icon="i03" data-rel="popup">Three dollars</a>
+            <a href="#popupConfirm2" data-role="button" data-icon="adjust" data-rel="popup">Other Amount...</a>
+            <!--  data-icon="i01" -->
+            <br /><br />
+            <p>
+                This will be transferred from your chequing account to your
+                savings account immediately, within the limits you have set.
+            </p>
+
+            <div data-role="popup" id="popupConfirm2" style="margin: 10px;">
+                <h4>Success</h4>
+                <br />
+                <a href="#pgHome">Your transaction has occurred</a>
+                <br />&nbsp;
+            </div>
+
+        </div>
+        <!--
+        <div data-role="footer" data-position="fixed">
+            <a href="#pgInfo" data-role="button" class="ui-btn-right ui-alt-icon ui-nodisc-icon" data-icon="info" data-iconpos="notext"></a>
+            <h4>&copy;2015 &nbsp;Save Up&nbsp;</h4>
+        </div>/footer -->
+    </div><!-- /page -->
+    <!-- LOGGING IN -->
+    <div data-role="page" id="pgLogin" data-title="Save Up" data-title="Save Up">
+        <div data-role="header" data-theme="a">
+            <h1 align="center">Welcome to Save Up!</h1>
+            <a href="#pgInfo" data-role="button" class="ui-btn-right ui-alt-icon ui-nodisc-icon" data-icon="info" data-iconpos="notext"></a>
+        </div><!-- /header -->
+
+        <div data-role="content">
+            <br />
+            <h1 class="center-wrapper">Save Up</h1>
+            <h2 class="center-wrapper">Nudging for savings!</h2>
+            <br />
+            <a href="#pgHome" data-role="button" data-icon="facebook" class="ui-alt-icon ui-nodisc-icon">Login using Facebook</a>
+            <br />
+            <br />
+            <p class="center-wrapper">
+                You will not need to login again
+                <br />(unless you logout)
+            </p>
+        </div><!-- /content -->
+    <!--
+        <div data-role="footer" data-position="fixed">
+            <h4>&copy;2015 &nbsp;Save Up&nbsp;</h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+
+
+
+
+
+
+                    <div data-role="page" id="pgInfo" data-add-back-btn="true">
+                        <div data-role="header">
+                            <a data-role="button" data-rel="back" data-icon="back" class="ui-alt-icon ui-nodisc-icon" data-iconpos="notext"></a>
+                            <h1>Help</h1>
+                        </div><!-- /header -->
+
+                        <div data-role="content">
+                            <br />
+                            <p>Information on GotIt! goes here.</p>
+
+
+
+                        </div><!-- /content -->
+
+                        <div data-role="footer" data-position="fixed">
+                            <h4>&copy;2015 &nbsp;Save Up&nbsp;</h4>
+                        </div><!-- /footer -->
+                    </div><!-- /page -->
+
+                    <div data-role="page" id="pgDlog1">
+                        <div data-role="header">
+                            <h1>DialogTitle</h1>
+                        </div><!-- /header -->
+
+                        <div data-role="content">
+                            <p>Dialog Page 2 content goes here.</p>
+                        </div><!-- /content -->
+                    </div><!-- /page -->
+                    <!--
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+            -->
+</body>
+</html>
